@@ -1,0 +1,21 @@
+
+h1{
+    color: red;
+}
+h6{
+    color: red;
+}
+body{
+    background-repeat: no-repeat;
+    /* background-image: url( "2.jpg" ); */
+    background-size: cover;
+}
+header{
+    text-align: center;
+
+}
+.im{ 
+    width: 400px;
+    height: 200px;
+
+}

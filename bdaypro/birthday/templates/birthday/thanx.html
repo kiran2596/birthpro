@@ -1,0 +1,18 @@
+{% extends "birthday/base.html" %}
+
+{% block body_block %}
+{% load static %}
+<div class="jumbotron">
+    <h1 class="display-3">BIRTHDAY SPECIAL...</h1>
+    <p class="lead">testing page...</p>
+    <hr class="my-2">
+    <!-- <p>today date is..</p> -->
+    thanx too registered...
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="{% url 'index' %}" role="button">back to home page.. </a>
+    </p>
+    
+    {% load static %} <img src="{% static "2.gif" %}" alt="Hi!" />
+    
+</div>
+{% endblock %}

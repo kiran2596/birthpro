@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static "bootstrap.min.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static "style.css" %}">
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-warning navbar-light sticky-top">
+    
+    <div class="container">
+        <ul class="navbar-nav">
+            <li><a class="nav-link" href="{% url 'index' %}">home </a> </li>
+            <li><a class="nav-link" href="{% url 'birthday:wishlist' %}">Wish to.. </a> </li>
+            <li><a class="nav-link" href="{% url 'birthday:viewlist' %}">see.. </a> </li>
+            <li><a class="nav-link" href="{% url 'admin:index' %}">Admin</a>  </li>
+                     
+    </div>
+
+</nav>
+
+<div cl ass="container">
+
+    {% block body_block %}
+    <!-- Anything outside of this will be inherited if you extend -->
+    {%  endblock %}
+</div>
+
+
+
+
+<!-- <script src="static/css_js/jquery-3.2.1.min.js"></script>
+<script src="static/css_js/popper.js"></script> -->
+<script src="{% static "bootstrap.min.js" %}"></script>     
+</body>
+</html>

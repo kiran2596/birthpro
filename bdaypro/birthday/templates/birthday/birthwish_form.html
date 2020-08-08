@@ -1,0 +1,29 @@
+{% extends "birthday/base.html" %}
+
+{% block body_block %}
+<h1>
+    {% if not form.instance.pk %}
+    Create Birthwish
+</h1>
+        <div class ='jumbotron'>
+            
+        <form method="post" class="form" enctype="multipart/form-data" >
+        
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        <input type="submit" class='btn btn-primary' value="submit">
+        
+        </form>
+    {% else  %}
+
+    thanks for wishes..
+
+    {% endif %}
+
+<h6> image is optional... </h6>
+<h6>if birthdday name is alredy exist try our fansy identify name.. </h6>
+<h6>this is a testingof doployememnt so ...  hahaha</h6>
+<h6>thanks for the wishes</h6>
+</div>
+{% endblock %}

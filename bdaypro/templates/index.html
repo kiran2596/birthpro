@@ -1,0 +1,63 @@
+{% extends "birthday/base.html" %}
+{% load static %} 
+{% block body_block %}
+<header class="page-header">
+<h1>
+    <p id="demo" class="font-weight-lighter" ></p>
+</h1>
+</header>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("aug 9, 2020 00:00:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "HAPPY BIRTHDAY DANNY....";
+  }
+}, 1000);
+</script>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-sm-6">
+            <img width="500px" src="{% static "4.gif" %}" alt="Hi!" />
+        </div>
+
+        <div class="col-sm-6">
+            <h1 class="display-3">BIRTHDAY SPECIAL...</h1>            
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'birthday:wishlist' %}" role="button">Wish to Kshitij Bansod.. </a>
+        </p>
+        <p class="lead">testing page...</p>
+        </div>
+    </div>
+    <img class="im" src="{% static "6.gif" %}" alt="Hi!" />
+    
+    <img class="im" src="{% static "3.gif" %}" alt="Hi!" />
+    
+    
+    <img class="im" src="{% static "5.gif" %}" alt="Hi!" />
+    
+</div>
+{% endblock %}

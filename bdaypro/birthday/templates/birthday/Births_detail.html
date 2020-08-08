@@ -1,0 +1,28 @@
+{% extends "birthday/base.html" %}
+
+{% block body_block %}
+<div>
+
+<marquee behavior='alternate' scrolldelay='10'><H5 style="color: blue;">thanks to  <b  style ='color:red'; >' {{Births_detail.name}} '</b> personally </H5></marquee></div>
+
+<div class="jumbotron">
+    <div class="card" style="width:200px">
+        {% if Births_detail.images %}
+        <img height="200px" class="card-img-top rounded" src="{{ Births_detail.images.url }}" alt="Card image">
+        {% else %}
+        {% load static %} <img height="200px" class="card-img-top rounded" src="{% static "1.jpg" %}" alt="Hi!" />
+        {% endif %}
+        <div class="card-body">
+          <h4 class="card-title">{{Births_detail.name}} </h4>
+          <p class="card-text">{{Births_detail.message}}</p>
+          <a class="card-link" href="{% url 'index' %}">home </a> 
+          <a class="card-link" href="{% url 'birthday:viewlist' %}">see others </a> 
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+<hr>
